@@ -1,0 +1,30 @@
+name: Feature or experiment
+description: Propose an improvement or a reproducible ML experiment.
+title: "[Proposal] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or hypothesis
+      description: Who needs this behavior, or what modeling hypothesis should be tested?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the intended behavior and any alternatives you considered.
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: How should it be evaluated?
+      description: For code changes, describe expected checks. For ML experiments, specify development partitions, comparison metrics, and cost or latency tradeoffs. Avoid tuning against the official test set.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Link related issues, documentation, or primary sources if useful.

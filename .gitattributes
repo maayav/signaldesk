@@ -1,0 +1,16 @@
+# Keep source and documentation consistent across checkouts.
+* text=auto eol=lf
+
+# Source dataset bytes are verified by SHA-256; never normalize their endings.
+data/raw/* -text -whitespace
+
+# Serialized models and images are ordinary Git binaries, without Git LFS.
+*.joblib binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary

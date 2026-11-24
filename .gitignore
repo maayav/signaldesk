@@ -1,0 +1,14 @@
+.venv/
+.work/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+.env
+var/
+*.sqlite3*
+.DS_Store
+.streamlit/secrets.toml
+dist/
+build/

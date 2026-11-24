@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "model_version": "banking77-c9813bba904c",
+  "created_at": "2026-11-24T07:50:45.264167+00:00",
+  "data_source_commit": "57ec275d8078af65b7731c2a98be812d844a6d6b",
+  "data_sha256": {
+    "train.csv": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+    "test.csv": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+    "LICENSE": "7e7170e3cebf88a9f60c7b8421418323c09304da1af4d5e90f4da1dc1c8a2661"
+  },
+  "files": {
+    "model.joblib": {
+      "sha256": "9d2fe5b1fffad2998e895f2a3d703e1a34289e8c4d96b2edfd3a6eff38870590",
+      "size_bytes": 9507530
+    },
+    "metrics.json": {
+      "sha256": "c3884d04159476e0fc2f7fba76e90239090c324441766acdfb5b19d732779c48",
+      "size_bytes": 25611
+    },
+    "splits.json": {
+      "sha256": "c099ffc7eadfcb6011dd0e499c6ea129b6b346183aa82224872bc549b0828d4b",
+      "size_bytes": 967621
+    }
+  },
+  "warning": "Joblib is executable serialization: only load trusted local artifacts. Checksums detect corruption, not malicious replacement."
+}

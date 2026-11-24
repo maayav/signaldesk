@@ -1,0 +1,15 @@
+.venv
+.work
+.git
+.pytest_cache
+.ruff_cache
+__pycache__
+*.egg-info
+var
+.env
+tests
+data
+docs
+dist
+notebooks
+.DS_Store

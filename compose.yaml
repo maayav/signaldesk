@@ -1,0 +1,32 @@
+services:
+  api:
+    build: .
+    image: signaldesk:local
+    ports:
+      - "127.0.0.1:${SIGNALDESK_API_PORT:-8000}:8000"
+    environment:
+      SIGNALDESK_ARTIFACT_DIR: /app/artifacts
+      SIGNALDESK_DB_PATH: /app/var/events.sqlite3
+    volumes:
+      - events:/app/var
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/readyz')"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 30s
+    restart: unless-stopped
+  dashboard:
+    image: signaldesk:local
+    build: .
+    command: ["streamlit", "run", "app/dashboard.py", "--server.address=0.0.0.0", "--server.port=8501", "--browser.gatherUsageStats=false"]
+    ports:
+      - "127.0.0.1:${SIGNALDESK_UI_PORT:-8501}:8501"
+    environment:
+      SIGNALDESK_API_URL: http://api:8000
+    depends_on:
+      api:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  events:

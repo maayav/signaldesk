@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Setup and operation
+    url: https://github.com/maayav/signaldesk/blob/main/docs/architecture.md
+    about: Read the component, configuration, and deployment guide.
+  - name: Security reporting
+    url: https://github.com/maayav/signaldesk/blob/main/SECURITY.md
+    about: Follow this guidance before disclosing a potential vulnerability.

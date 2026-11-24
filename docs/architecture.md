@@ -57,6 +57,8 @@ docker compose up --build
 
 Compose runs the API and dashboard as separate services. The dashboard addresses the API by its Compose service name. Host ports are bound to the loopback interface for local access. A named or mounted SQLite data directory preserves local operational events according to the Compose configuration. Stop the services with `docker compose down`.
 
+Both services declare HTTP health probes. Use `docker compose up -d --build --wait` when another process must call the stack immediately after startup; this waits for the API and dashboard to accept requests.
+
 To use different host ports, run `SIGNALDESK_API_PORT=18000 SIGNALDESK_UI_PORT=18501 docker compose up --build`. The services still communicate on their internal default ports.
 
 The Docker setup is a local deployment. The repository does not contain a live hosted URL, paid cloud infrastructure, or external account configuration.

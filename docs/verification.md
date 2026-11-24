@@ -26,6 +26,8 @@ The final Docker image built successfully. The API became healthy and the dashbo
 
 Restarting the Docker API retained **20 predictions and 2 feedback records**, confirming persistence through the configured event volume.
 
+A remote CI run exposed a dashboard startup race: Compose considered the process running before Streamlit accepted HTTP requests. The dashboard now has an explicit health probe, so `docker compose up --wait` waits for both services to become healthy. Two fresh container starts passed the complete stack checker after this fix.
+
 ### Browser and launcher checks
 
 The real Docker dashboard was exercised in a browser across all four pages:
